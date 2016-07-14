@@ -1,6 +1,99 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+@import 'font-awesome';
 @import 'box-sizing';
+
+$gutter: 1rem;
+$brand-orange: #ff6600;
+$bright-white: #fff;
+$gray: #5e6d70;
+$card-gray: #f2f2f2;
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+figure {
+  margin-left: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__nav {
+    padding: 0 $gutter;
+    background: $brand-orange;
+    color: $bright-white;
+    font-family: sans-serif;
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding: 0 $gutter;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 60rem;
+  margin: auto;
+}
+
+.title {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.fa-plus-circle {
+  color: $bright-white;
+  font-size: 2rem;
+}
+
+.nav-form {
+  display: flex;
+  width: 100%;
+  padding: 0 $gutter;
+  background: $gray;
+  color: $bright-white;
+  font-family: sans-serif;
+}
+
+.form-container {
+
+}
+
+.form-list {
+  width: 60rem;
+}
+
+.puppy-card {
+  display: flex;
+  background: $card-gray;
+  color: black;
+  font-family: sans-serif;
+  width: 60rem;
+}
+
+.pic-frame {
+
+}
+
+.card-info {
+  flex-grow: 1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
