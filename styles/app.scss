@@ -24,6 +24,11 @@ figure {
   margin-left: 0;
 }
 
+hr {
+  background: black;
+  width: 100%;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -59,6 +64,8 @@ figure {
   font-size: 2rem;
 }
 
+// FORM STYLES
+
 .nav-form {
   display: flex;
   width: 100%;
@@ -69,15 +76,41 @@ figure {
 }
 
 .form-container {
+  display: flex;
+  flex-direction: column;
+}
 
+.addpup {
 }
 
 .form-list {
+  display: flex;
+  flex-direction: column;
   width: 60rem;
 }
 
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  color: $bright-white;
+}
+
+.button-container__form {
+}
+
+.btn-save {
+
+}
+
+// PUPPY CARD STYLES!
+
+
 .puppy-card {
   display: flex;
+  align-items: center;
   background: $card-gray;
   color: black;
   font-family: sans-serif;
@@ -85,11 +118,42 @@ figure {
 }
 
 .pic-frame {
+  width: 17rem;
+  margin: $gutter;
+}
 
+.pic-frame__pic {
+  width: 100%;
+  height: auto;
 }
 
 .card-info {
   flex-grow: 1;
+  margin: $gutter;
+}
+
+.card-list {
+
+}
+
+.card-list__item {
+
+}
+
+.card-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  color: $brand-orange;
+}
+
+.btn {
+  background: $brand-orange;
+  color: white;
+  border: none;
+  padding: 0.5rem;
 }
 
 .button-container {
