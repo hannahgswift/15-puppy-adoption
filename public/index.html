@@ -39,28 +39,30 @@
       </div>
 
       <div class="container">
-        <div class="puppy-card">
-          <figure class="pic-frame">
-            <img src="http://www.placekitten.com/200/200" alt="" class="pic-frame__pic">
-          </figure>
-          <div class="card-info">
-            <ul class="card-list">
-              <li class="card-list__item">Name
-                <input class="card-input" type="text">
-              </li>
-              <li class="card-list__item">Age
-                <input class="card-input" type="text">
-              </li>
-              <li class="card-list__item">Photo URL
-                <input class="card-input" type="text">
-              </li>
-              <li class="card-list__item">Profile
-                <input class="card-input" type="text">
-              </li>
-            </ul>
-            <div class="button-container">
-              <button class="btn btn-dlt">Delete</button>
-              <button class="btn dtn-udt">Update</button>
+        <div class="puppy-list">
+          <div class="puppy-card">
+            <figure class="pic-frame">
+              <img src="http://www.placekitten.com/200/200" alt="" class="pic-frame__pic">
+            </figure>
+            <div class="card-info">
+              <ul class="card-list">
+                <li class="card-list__item">Name
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Age
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Photo URL
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Profile
+                  <input class="card-input" type="text">
+                </li>
+              </ul>
+              <div class="button-container">
+                <button class="btn btn-dlt">Delete</button>
+                <button class="btn dtn-udt">Update</button>
+              </div>
             </div>
           </div>
         </div>
@@ -76,6 +78,8 @@
     var appElement = document.querySelector('.app__main');
     var App = require('application');
     var appyMcAppFace = new App(appElement);
+
+    appyMcAppFace.render();
 
 
   </script>
