@@ -69,7 +69,7 @@ hr {
 .nav-form {
   display: flex;
   width: 100%;
-  padding: 0 $gutter;
+  padding: $gutter;
   background: $gray;
   color: $bright-white;
   font-family: sans-serif;
@@ -78,6 +78,7 @@ hr {
 .form-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .addpup {
@@ -115,6 +116,8 @@ hr {
   color: black;
   font-family: sans-serif;
   width: 60rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: $gutter 0;
 }
 
 .pic-frame {
@@ -153,7 +156,9 @@ hr {
   background: $brand-orange;
   color: white;
   border: none;
-  padding: 0.5rem;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
 }
 
 .button-container {
