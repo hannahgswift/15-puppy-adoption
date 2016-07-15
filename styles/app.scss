@@ -24,10 +24,10 @@ figure {
   margin-left: 0;
 }
 
-hr {
-  background: black;
-  width: 100%;
-}
+// hr {
+//   background: black;
+//   width: 100%;
+// }
 
 .app {
   display: flex;
@@ -67,6 +67,7 @@ hr {
 // FORM STYLES
 
 .nav-form {
+  // display: none;
   display: flex;
   width: 100%;
   padding: $gutter;
@@ -88,12 +89,16 @@ hr {
   display: flex;
   flex-direction: column;
   width: 60rem;
+  &__item {
+    padding-bottom: 0.5rem;
+  }
 }
 
 .form-input {
   width: 100%;
   background: transparent;
   border: none;
+  border-bottom: 0.1rem solid black;
   line-height: 1.5rem;
   font-size: 1rem;
   color: $bright-white;
@@ -137,16 +142,19 @@ hr {
 
 .card-list {
 
+  &__item {
+    padding-bottom: 0.5rem;
+  }
+
 }
 
-.card-list__item {
 
-}
 
 .card-input {
   width: 100%;
   background: transparent;
   border: none;
+  border-bottom: 0.1rem solid black;
   line-height: 1.5rem;
   font-size: 1rem;
   color: $brand-orange;
