@@ -12,24 +12,24 @@ export default class PuppyView {
       <div class="puppy-list">
         <div class="puppy-card">
           <figure class="pic-frame">
-            <img src="http://placekitten.com/300" alt="" class="pic-frame__pic">
+            <img src="" alt="" class="pic-frame__pic">
           </figure>
           <div class="card-info">
             <ul class="card-list">
               <li class="card-list__item card-list__name">
-                <p class="card-info__title">Name</p>
+                <p class="card-info__title"></p>
                 <input class="card-input" type="text">
               </li>
               <li class="card-list__item card-list__age">
-                <p class="card-info__title">Age</p>
+                <p class="card-info__title age"></p>
                 <input class="card-input" type="text">
               </li>
               <li class="card-list__item card-list__photourl">
-                <p class="card-info__title">Photo URL</p>
+                <p class="card-info__title photourl"></p>
                 <input class="card-input" type="text">
               </li>
               <li class="card-list__item card-list__profile">
-                <p class="card-info__title">Profile</p>
+                <p class="card-info__title profile"></p>
                 <input class="card-input" type="text">
               </li>
             </ul>
@@ -48,7 +48,15 @@ export default class PuppyView {
   render() {
     console.log(this.element);
 
+    this.element.querySelector('.card-info__title').innerHTML = this.currentPup.name;
+    this.element.querySelector('.age').innerHTML = this.currentPup.age;
+    this.element.querySelector('.photourl').innerHTML = this.currentPup.photoUrl;
+    this.element.querySelector('.pic-frame__pic').src = this.currentPup.photoUrl;
+    this.element.querySelector('.profile').innerText = this.currentPup.profile;
+
     // this.appElement.appendChild(this.element);
+
+
 
   }
 
