@@ -1,17 +1,14 @@
 export default class ApplicationView {
-  constructor() {
-
+  constructor(appElement) {
+    this.appElement = appElement;
+    this.data = [];
   }
 
-  render() {
-
-  }
-
-  add() {
-
-  }
-
-  remove() {
-
+  getData() {
+    return fetch('http://tiny-tn.herokuapp.com/collections/questions')
+    .then((res) => res.json())
+      .then((data) => {
+        this.data = data;
+      });
   }
 }
