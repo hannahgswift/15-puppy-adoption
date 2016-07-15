@@ -66,6 +66,8 @@
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
@@ -75,10 +77,11 @@
 
   <script type="text/javascript">
 
-    var appElement = document.querySelector('.app__main');
+    var appElement = document.querySelector('.app-main');
     var App = require('application');
     var appyMcAppFace = new App(appElement);
 
+    appyMcAppFace.start();
     appyMcAppFace.render();
 
 
