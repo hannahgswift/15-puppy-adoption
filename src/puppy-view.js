@@ -18,7 +18,7 @@ export default class PuppyView {
             <ul class="card-list">
               <li class="card-list__item card-list__name">
                 <p class="card-info__title">Name</p>
-                <input class="card-input" type="text"></input>
+                <input class="card-input name-input" type="text"></input>
               </li>
               <li class="card-list__item card-list__age">
                 <p class="card-info__title age">Age</p>
@@ -26,11 +26,11 @@ export default class PuppyView {
               </li>
               <li class="card-list__item card-list__photourl">
                 <p class="card-info__title photourl">Photo URL</p>
-                <input class="card-input" type="text"></input>
+                <input class="card-input photo-input" type="text"></input>
               </li>
               <li class="card-list__item card-list__profile">
                 <p class="card-info__title profile">Profile</p>
-                <input class="card-input" type="text"></input>
+                <input class="card-input profile-input" type="text"></input>
               </li>
             </ul>
             <div class="button-container">
@@ -48,13 +48,14 @@ export default class PuppyView {
   render() {
     console.log(this.element);
 
-    this.element.querySelector('.card-info__title').innerHTML = this.currentPup.name;
+    this.element.querySelector('.name-input').value = this.currentPup.name;
     this.element.querySelector('.age-input').value = this.currentPup.age;
-    this.element.querySelector('.photourl').innerHTML = this.currentPup.photoUrl;
-    this.element.querySelector('.pic-frame__pic').src = this.currentPup.photoUrl;
-    this.element.querySelector('.profile').innerHTML = this.currentPup.profile;
+    this.element.querySelector('.photo-input').value = this.currentPup.photoUrl;
+    this.element.querySelector('.pic-frame__pic')
+      .setAttribute('src', this.currentPup.photoUrl);
+    this.element.querySelector('.profile-input').value = this.currentPup.profile;
 
-    // this ill change to .value
+    // this will change to .value
 
     // this.appElement.appendChild(this.element);
 

@@ -2,7 +2,6 @@ export default class CreateForm {
   constructor(element, app) {
     this.element = element;
     this.app = app;
-
   }
 
   toggle() {
