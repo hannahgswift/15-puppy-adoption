@@ -52,7 +52,7 @@ export default class PuppyView {
     this.element.querySelector('.age').innerHTML = this.currentPup.age;
     this.element.querySelector('.photourl').innerHTML = this.currentPup.photoUrl;
     this.element.querySelector('.pic-frame__pic').src = this.currentPup.photoUrl;
-    this.element.querySelector('.profile').innerText = this.currentPup.profile;
+    this.element.querySelector('.profile').innerHTML = this.currentPup.profile;
 
     // this.appElement.appendChild(this.element);
 

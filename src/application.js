@@ -1,4 +1,5 @@
 import PuppyView from 'puppy-view';
+import CreateForm from 'create-form';
 
 export default class ApplicationView {
   constructor(appElement) {
