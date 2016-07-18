@@ -17,20 +17,20 @@ export default class PuppyView {
           <div class="card-info">
             <ul class="card-list">
               <li class="card-list__item card-list__name">
-                <p class="card-info__title"></p>
-                <input class="card-input" type="text">
+                <p class="card-info__title">Name</p>
+                <input class="card-input" type="text"></input>
               </li>
               <li class="card-list__item card-list__age">
-                <p class="card-info__title age"></p>
-                <input class="card-input" type="text">
+                <p class="card-info__title age">Age</p>
+                <input class="card-input age-input" type="text"></input>
               </li>
               <li class="card-list__item card-list__photourl">
-                <p class="card-info__title photourl"></p>
-                <input class="card-input" type="text">
+                <p class="card-info__title photourl">Photo URL</p>
+                <input class="card-input" type="text"></input>
               </li>
               <li class="card-list__item card-list__profile">
-                <p class="card-info__title profile"></p>
-                <input class="card-input" type="text">
+                <p class="card-info__title profile">Profile</p>
+                <input class="card-input" type="text"></input>
               </li>
             </ul>
             <div class="button-container">
@@ -49,10 +49,12 @@ export default class PuppyView {
     console.log(this.element);
 
     this.element.querySelector('.card-info__title').innerHTML = this.currentPup.name;
-    this.element.querySelector('.age').innerHTML = this.currentPup.age;
+    this.element.querySelector('.age-input').value = this.currentPup.age;
     this.element.querySelector('.photourl').innerHTML = this.currentPup.photoUrl;
     this.element.querySelector('.pic-frame__pic').src = this.currentPup.photoUrl;
     this.element.querySelector('.profile').innerHTML = this.currentPup.profile;
+
+    // this ill change to .value
 
     // this.appElement.appendChild(this.element);
 
@@ -61,5 +63,3 @@ export default class PuppyView {
   }
 
 }
-
-// console.log('friday is lit');

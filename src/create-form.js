@@ -3,23 +3,14 @@ export default class CreateForm {
     this.element = element;
     this.app = app;
 
-    // this.element.querySelector('.add-btn').addEventListener('click', function (){
-    //   if (click === true) {
-    //     this.element.querySelector('.nav-form').style = display: flex;
-    //   }
-    // });
-    //
+  }
 
-    const button = document.getElementsByClassName('.add-btn'); // Assumes element with id='button'
-
-    button.onclick = function() {
-      const div = document.getElementsByClassName('.nav-form');
-      if (div.style.display !== 'none') {
-        div.style.display = 'none';
-      } else {
-        div.style.display = 'flex';
-      }
-    };
+  toggle() {
+    const button = document.querySelector('.add-btn');
+    const form = document.querySelector('.nav-form');
+    button.addEventListener('click', () => {
+      form.classList.toggle('hidden');
+    })
   }
 
 

@@ -5,9 +5,13 @@ export default class ApplicationView {
   constructor(appElement) {
     this.appElement = appElement;
     this.data = [];
+
+    this.formView = new CreateForm(this.appElement.querySelector('.nav-form'), this);
+    this.formView.toggle();
+
   }
 
-  render(data) {
+  render() {
     this.appElement.innerHTML = '';
 
     const components = this.data.map((item) => new PuppyView(item));
@@ -26,7 +30,6 @@ export default class ApplicationView {
         this.render(data);
       });
   }
-
 }
 
 console.log('blue');

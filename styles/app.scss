@@ -76,13 +76,15 @@ button:hover {
 // FORM STYLES
 
 .nav-form {
-  // display: none;
   display: flex;
+  display: none;
   width: 100%;
   padding: $gutter;
   background: $gray;
   color: $bright-white;
   font-family: sans-serif;
+  // height: 0;
+  overflow: hidden;
 }
 
 .form-container {
@@ -190,4 +192,8 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.hidden {
+  display: flex;
 }
