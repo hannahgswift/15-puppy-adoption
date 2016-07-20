@@ -1,14 +1,14 @@
 import PuppyView from 'puppy-view';
-import CreateForm from 'create-form';
+import CreateFormView from 'create-form';
 
 export default class ApplicationView {
   constructor(appElement) {
     this.appElement = appElement;
     this.data = [];
 
-    this.formView = new CreateForm(this.appElement.querySelector('.nav-form'), this);
+    this.formView = new CreateFormView(this.appElement.querySelector('.nav-form'), this);
     this.formView.toggle();
-
+    // this.formView.newFunction();
   }
 
   render() {
