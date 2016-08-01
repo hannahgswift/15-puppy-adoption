@@ -1,11 +1,8 @@
 'use strict';
 
-
 export default class PuppyView {
   constructor(currentPup, app) {
     this.currentPup = currentPup;
-
-    // this.render();
 
     this.element = document.createElement('div');
     this.element.classList.add('puppy-list__item');
@@ -44,6 +41,7 @@ export default class PuppyView {
         </div>
         </div>`;
     this.render();
+    this.remove();
   }
 
   render() {
@@ -54,6 +52,24 @@ export default class PuppyView {
     this.element.querySelector('.photo-input').value = this.currentPup.photoUrl;
     this.element.querySelector('.pic-frame__pic').setAttribute('src', this.currentPup.photoUrl);
     this.element.querySelector('.profile-input').value = this.currentPup.profile;
+  }
+
+  remove() {
+    this.element.querySelector('.btn-dlt').addEventListener('click', (ev) => {
+      ev.preventDefault();
+
+      fetch(`http://tiny-tn.herokuapp.com/collections/hs-puppy/${this.currentPup._id}`, {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(this.element),
+      }).then((res) => res.json())
+      .then(() => {
+        alert('Puppy go bye bye.');
+      });
+    });
   }
 
 }

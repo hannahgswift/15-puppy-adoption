@@ -33,6 +33,11 @@ export default class ApplicationView {
     this.render();
   }
 
+  removePuppyData(puppy) {
+    this.data = this.data.filter((x) => x !== puppy);
+    this.render();
+  }
+
   start() {
     return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
       .then((res) => res.json())
