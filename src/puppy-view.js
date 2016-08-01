@@ -34,7 +34,7 @@ export default class PuppyView {
             </ul>
             <div class="button-container">
               <button class="btn btn-dlt">Delete</button>
-              <button class="btn dtn-udt">Update</button>
+              <button class="btn btn-update">Update</button>
             </div>
           </div>
         </div>
@@ -42,11 +42,10 @@ export default class PuppyView {
         </div>`;
     this.render();
     this.remove();
+    this.update();
   }
 
   render() {
-    console.log(this.element);
-
     this.element.querySelector('.name-input').value = this.currentPup.name;
     this.element.querySelector('.age-input').value = this.currentPup.age;
     this.element.querySelector('.photo-input').value = this.currentPup.photoUrl;
@@ -69,6 +68,30 @@ export default class PuppyView {
       .then(() => {
         alert('Puppy go bye bye.');
       });
+    });
+  }
+
+  update() {
+    this.element.querySelector('.btn-update').addEventListener('click', (ev) => {
+      ev.preventDefault();
+
+      fetch(`http://tiny-tn.herokuapp.com/collections/hs-puppy/${this.currentPup._id}`, {
+        method: 'PUT',
+        headers: {
+          Accept: 'application/json',
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: this.element.querySelector(`.name-input`).value,
+          age: this.element.querySelector(`.age-input`).value,
+          url: this.element.querySelector(`.photo-input`).value,
+          profile: this.element.querySelector(`.profile-input`).value,
+        }),
+      }).then((res) => res.json())
+        .then((data) => {
+          this.info = data;
+          alert('Puppy has been updated!');
+        });
     });
   }
 

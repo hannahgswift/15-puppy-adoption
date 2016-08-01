@@ -25,23 +25,15 @@ export default class CreateFormView {
           body: JSON.stringify(formData),
         }).then((res) => res.json())
         .then((data) => {
-          this.element.querySelector('.name-input').value = ' ';
-          this.element.querySelector('.age-input').value = ' ';
-          this.element.querySelector('.photo-input').value = ' ';
-          this.element.querySelector('.profile-input').value = ' ';
+          this.element.querySelector('.name-input').value = '';
+          this.element.querySelector('.age-input').value = '';
+          this.element.querySelector('.photo-input').value = '';
+          this.element.querySelector('.profile-input').value = '';
 
           this.application.addPuppyData(data);
         });
     });
   }
-
-  render() {
-    this.element.querySelector('.name-input').value = this.data.name;
-    this.element.querySelector('.age-input').value = this.data.age;
-    this.element.querySelector('.photo-input').value = this.data.photoUrl;
-    this.element.querySelector('.profile-input').value = this.data.profile;
-  }
-
 
   toggle() {
     const button = document.querySelector('.add-btn');

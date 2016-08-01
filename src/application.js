@@ -29,7 +29,7 @@ export default class ApplicationView {
   }
 
   addPuppyData(puppy) {
-    this.data = [...this.data, puppy];
+    this.data = [puppy, ...this.data];
     this.render();
   }
 
