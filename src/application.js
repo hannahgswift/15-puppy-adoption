@@ -12,6 +12,15 @@ export default class ApplicationView {
     this.start();
   }
 
+  start() {
+    return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
+      .then((res) => res.json())
+      .then((data) => {
+        this.data = data;
+        this.render(data);
+      });
+  }
+
   render() {
     this.listElement.innerHTML = '';
 
@@ -19,13 +28,6 @@ export default class ApplicationView {
       const duck = new PuppyView(puppy, this);
       this.listElement.appendChild(duck.element);
     });
-
-    // const components = this.data.map((item) => new PuppyView(item));
-    //
-    // components.forEach((card) => {
-    //   this.listElement.appendChild(card.element);
-    //   card.render();
-    // });
   }
 
   addPuppyData(puppy) {
@@ -38,12 +40,12 @@ export default class ApplicationView {
     this.render();
   }
 
-  start() {
-    return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
-      .then((res) => res.json())
-      .then((data) => {
-        this.data = data;
-        this.render(data);
-      });
-  }
+  // start() {
+  //   return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       this.data = data;
+  //       this.render(data);
+  //     });
+  // }
 }

@@ -1,8 +1,9 @@
 'use strict';
 
 export default class PuppyView {
-  constructor(currentPup, app) {
+  constructor(currentPup, application) {
     this.currentPup = currentPup;
+    this.application = application;
 
     this.element = document.createElement('div');
     this.element.classList.add('puppy-list__item');
@@ -67,6 +68,8 @@ export default class PuppyView {
       }).then((res) => res.json())
       .then(() => {
         alert('Puppy go bye bye.');
+        // Should live-reload on delete. Does not work...yet.
+        this.application.removePuppyData(this.data);
       });
     });
   }
