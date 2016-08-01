@@ -9,7 +9,6 @@ export default class ApplicationView {
 
     this.formView = new CreateFormView(this.appElement, this);
     this.formView.toggle();
-    // this.formView.newFunction();
     this.start();
   }
 
@@ -35,7 +34,6 @@ export default class ApplicationView {
   }
 
   start() {
-    // const formView = new CreateFormView(this.appElement);
     return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
       .then((res) => res.json())
       .then((data) => {
@@ -44,5 +42,3 @@ export default class ApplicationView {
       });
   }
 }
-
-console.log('blue');

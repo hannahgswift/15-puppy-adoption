@@ -5,7 +5,7 @@ export default class PuppyView {
   constructor(currentPup, app) {
     this.currentPup = currentPup;
 
-    console.log(this.element);
+    // this.render();
 
     this.element = document.createElement('div');
     this.element.classList.add('puppy-list__item');
@@ -43,8 +43,7 @@ export default class PuppyView {
         </div>
         </div>
         </div>`;
-
-    console.log('puppy view present for pupppy duty');
+    this.render();
   }
 
   render() {
@@ -53,16 +52,8 @@ export default class PuppyView {
     this.element.querySelector('.name-input').value = this.currentPup.name;
     this.element.querySelector('.age-input').value = this.currentPup.age;
     this.element.querySelector('.photo-input').value = this.currentPup.photoUrl;
-    this.element.querySelector('.pic-frame__pic')
-      .setAttribute('src', this.currentPup.photoUrl);
+    this.element.querySelector('.pic-frame__pic').setAttribute('src', this.currentPup.photoUrl);
     this.element.querySelector('.profile-input').value = this.currentPup.profile;
-
-    // this will change to .value
-
-    // this.appElement.appendChild(this.element);
-
-
-
   }
 
 }

@@ -25,14 +25,12 @@ export default class CreateFormView {
           body: JSON.stringify(formData),
         }).then((res) => res.json())
         .then((data) => {
-          // NEED SOME WAY TO INFORM THAT ITEM HAS BEEN ADDED
           this.element.querySelector('.name-input').value = ' ';
           this.element.querySelector('.age-input').value = ' ';
           this.element.querySelector('.photo-input').value = ' ';
           this.element.querySelector('.profile-input').value = ' ';
 
           this.application.addPuppyData(data);
-          // console.log(data);
         });
     });
   }
@@ -52,6 +50,4 @@ export default class CreateFormView {
       form.classList.toggle('hidden');
     });
   }
-
-
-} // End of Class
+}
