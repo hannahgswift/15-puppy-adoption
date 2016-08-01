@@ -18,19 +18,19 @@ export default class PuppyView {
             <ul class="card-list">
               <li class="card-list__item card-list__name">
                 <p class="card-info__title">Name</p>
-                <input class="card-input name-input" type="text"></input>
+                <input class="card-input name-input" type="text">
               </li>
               <li class="card-list__item card-list__age">
                 <p class="card-info__title age">Age</p>
-                <input class="card-input age-input" type="text"></input>
+                <input class="card-input age-input" type="text">
               </li>
               <li class="card-list__item card-list__photourl">
                 <p class="card-info__title photourl">Photo URL</p>
-                <input class="card-input photo-input" type="text"></input>
+                <input class="card-input photo-input" type="text">
               </li>
               <li class="card-list__item card-list__profile">
                 <p class="card-info__title profile">Profile</p>
-                <input class="card-input profile-input" type="text"></input>
+                <input class="card-input profile-input" type="text">
               </li>
             </ul>
             <div class="button-container">
@@ -69,7 +69,7 @@ export default class PuppyView {
       .then(() => {
         alert('Puppy go bye bye.');
         // Should live-reload on delete. Does not work...yet.
-        this.application.removePuppyData(this.data);
+        this.application.removePuppyData(this.currentPup);
       });
     });
   }
@@ -89,6 +89,7 @@ export default class PuppyView {
           age: this.element.querySelector(`.age-input`).value,
           url: this.element.querySelector(`.photo-input`).value,
           profile: this.element.querySelector(`.profile-input`).value,
+          // picture: this.element.querySelector('.pic-frame__pic').setAttribute('src'),
         }),
       }).then((res) => res.json())
         .then((data) => {
