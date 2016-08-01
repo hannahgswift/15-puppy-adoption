@@ -4,26 +4,39 @@ import CreateFormView from 'create-form';
 export default class ApplicationView {
   constructor(appElement) {
     this.appElement = appElement;
+    this.listElement = appElement.querySelector('.app-main');
     this.data = [];
 
-    this.formView = new CreateFormView(this.appElement.querySelector('.nav-form'), this);
+    this.formView = new CreateFormView(this.appElement, this);
     this.formView.toggle();
     // this.formView.newFunction();
+    this.start();
   }
 
   render() {
-    this.appElement.innerHTML = '';
+    this.listElement.innerHTML = '';
 
-    const components = this.data.map((item) => new PuppyView(item));
+    this.data.forEach((puppy) => {
+      const duck = new PuppyView(puppy, this);
+      this.listElement.appendChild(duck.element);
+    });
 
-    components.forEach((card) => {
-      this.appElement.appendChild(card.element);
-      card.render();
-    })
+    // const components = this.data.map((item) => new PuppyView(item));
+    //
+    // components.forEach((card) => {
+    //   this.listElement.appendChild(card.element);
+    //   card.render();
+    // });
+  }
+
+  addPuppyData(puppy) {
+    this.data = [...this.data, puppy];
+    this.render();
   }
 
   start() {
-    return fetch(`http://tiny-tn.herokuapp.com/collections/ryan-puppy`)
+    // const formView = new CreateFormView(this.appElement);
+    return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
       .then((res) => res.json())
       .then((data) => {
         this.data = data;

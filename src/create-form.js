@@ -2,43 +2,47 @@ export default class CreateFormView {
   constructor(element, application) {
     this.element = element;
     this.application = application;
+    this.add();
   }
 
-  // newFunction() {
-  //
-  //   this.element.querySelector('.nav-form').addEventListener('click', () => {
-  //
-  //     const PuppyData = {
-  //       name: this.element.querySelector('.name-input').value,
-  //       age: this.element.querySelector('.age-input').value,
-  //       photoUrl: this.element.querySelector('.photo-input').value,
-  //       profile: this.element.querySelector('.profile-input').value
-  //     }
-  //     event.preventDefault();
-  //
-  //     fetch(`http://tiny-tn.herokuapp.com/collections/hs-puppy`), {
-  //         method: 'post',
-  //         headers: {
-  //           Accept: 'application/json',
-  //           'Content-Type': 'application/json',
-  //         },
-  //         body: JSON.stringify(puppyData)
-  //       }.then((res) => res.json())
-  //       .then((data) => {
-  //
-  //         this.element.querySelector('.name-input').value = '';
-  //         this.element.querySelector('.age-input').value = '';
-  //         this.element.querySelector('.photo-input').value = '';
-  //         this.element.querySelector('.profile-input').value = '';
-  //
-  //       });
-  //
-  //   });
-  //
-  //
-  // }
+  add() {
+    document.querySelector('.nav-form').addEventListener('submit', (ev) => {
+      ev.preventDefault();
 
+      const formData = {
+        name: document.querySelector('.name-input').value,
+        age: document.querySelector('.age-input').value,
+        photoUrl: document.querySelector('.photo-input').value,
+        profile: document.querySelector('.profile-input').value,
+      };
 
+      fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }).then((res) => res.json())
+        .then((data) => {
+          // NEED SOME WAY TO INFORM THAT ITEM HAS BEEN ADDED
+          this.element.querySelector('.name-input').value = ' ';
+          this.element.querySelector('.age-input').value = ' ';
+          this.element.querySelector('.photo-input').value = ' ';
+          this.element.querySelector('.profile-input').value = ' ';
+
+          this.application.addPuppyData(data);
+          // console.log(data);
+        });
+    });
+  }
+
+  render() {
+    this.element.querySelector('.name-input').value = this.data.name;
+    this.element.querySelector('.age-input').value = this.data.age;
+    this.element.querySelector('.photo-input').value = this.data.photoUrl;
+    this.element.querySelector('.profile-input').value = this.data.profile;
+  }
 
 
   toggle() {
@@ -46,9 +50,8 @@ export default class CreateFormView {
     const form = document.querySelector('.nav-form');
     button.addEventListener('click', () => {
       form.classList.toggle('hidden');
-    })
+    });
   }
 
 
-
-}
+} // End of Class
