@@ -85,16 +85,18 @@ export default class PuppyView {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          name: this.element.querySelector(`.name-input`).value,
-          age: this.element.querySelector(`.age-input`).value,
-          url: this.element.querySelector(`.photo-input`).value,
-          profile: this.element.querySelector(`.profile-input`).value,
-          // picture: this.element.querySelector('.pic-frame__pic').setAttribute('src'),
+          name: this.element.querySelector('.name-input').value,
+          age: this.element.querySelector('.age-input').value,
+          url: this.element.querySelector('.photo-input').value,
+          profile: this.element.querySelector('.profile-input').value,
+          // picture: this.element.querySelector('.pic-frame__pic')
+          //   .value('src', this.currentPup.photoUrl),
         }),
       }).then((res) => res.json())
         .then((data) => {
           this.info = data;
           alert('Puppy has been updated!');
+          this.application.updatePuppy(data);
         });
     });
   }

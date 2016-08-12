@@ -40,6 +40,15 @@ export default class ApplicationView {
     this.render();
   }
 
+  updatePuppy(newPup) {
+    this.data = this.data.map((d) => {
+      if (d._id === newPup._id) {
+        return newPup;
+      }
+      return d;
+    });
+  }
+
   // start() {
   //   return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
   //     .then((res) => res.json())
