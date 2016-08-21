@@ -1,14 +1,13 @@
 // @import 'yoga';
 // @import 'normalize';
-
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome';
 @import 'box-sizing';
-
 $gutter: 1rem;
-$brand-orange: #ff6600;
+$brand-orange: #f60;
 $bright-white: #fff;
 $gray: #5e6d70;
+$black: #000;
 $card-gray: #f2f2f2;
 
 body {
@@ -20,18 +19,9 @@ ul {
   list-style: none;
 }
 
-figure {
-  margin-left: 0;
-}
-
 button {
   outline: 0;
 }
-
-// hr {
-//   background: black;
-//   width: 100%;
-// }
 
 .app {
   display: flex;
@@ -39,7 +29,6 @@ button {
   min-height: 100vh;
 
   &__nav {
-    // padding: 0 $gutter;
     background: $brand-orange;
     color: $bright-white;
     font-family: sans-serif;
@@ -64,8 +53,8 @@ button {
 }
 
 .add-btn {
+  border: 0;
   background: transparent;
-  border: none;
 }
 
 button:hover {
@@ -80,14 +69,12 @@ button:hover {
 // FORM STYLES
 
 .nav-form {
-  display: flex;
   display: none;
   width: 100%;
   padding: $gutter;
   background: $gray;
   color: $bright-white;
   font-family: sans-serif;
-  // height: 0;
   overflow: hidden;
 }
 
@@ -97,13 +84,11 @@ button:hover {
   align-items: flex-start;
 }
 
-.addpup {
-}
-
 .form-list {
   display: flex;
   flex-direction: column;
   width: 60rem;
+
   &__item {
     padding-bottom: 0.5rem;
   }
@@ -111,85 +96,92 @@ button:hover {
 
 .form-input {
   width: 100%;
+  border: 0;
+  border-bottom: 0.1rem solid $black;
   background: transparent;
-  border: none;
-  border-bottom: 0.1rem solid black;
-  line-height: 1.5rem;
-  font-size: 1rem;
   color: $bright-white;
-}
-
-.button-container__form {
-}
-
-.btn-save {
-
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 // PUPPY CARD STYLES!
-// PUPPY CARD STYLES!
-// PUPPY CARD STYLES!
-// PUPPY CARD STYLES!
-// PUPPY CARD STYLES!
-
 
 .puppy-card {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  background: $card-gray;
-  color: black;
-  font-family: sans-serif;
   width: 60rem;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: $gutter 0;
+  background: $card-gray;
+  color: $black;
+  font-family: sans-serif;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.pic-frame {
-  width: 17rem;
-  margin: $gutter;
-}
-
-.pic-frame__pic {
-  width: 100%;
+.object-fit {
+  width: calc(100% / 3);
   height: auto;
 }
 
+.pic-frame {
+  margin: $gutter;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+  }
+}
+
+
 .card-info {
   flex-grow: 1;
-  margin: $gutter;
+  margin-right: $gutter;
+  margin-left: 2rem;
+  height: 100%;
 }
 
 .card-list {
-
   &__item {
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
   }
-
 }
 
 .card-info__title {
-  color: #000000;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  color: $black;
 }
 
 .card-input {
   width: 100%;
+  border: 0;
+  border-bottom: 0.1rem solid $black;
   background: transparent;
-  border: none;
-  border-bottom: 0.1rem solid black;
-  line-height: 1.5rem;
-  font-size: 1rem;
   color: $brand-orange;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .btn {
-  background: $brand-orange;
-  color: white;
-  border: none;
   padding: 0.7rem;
-  font-size: 1rem;
+  border: 0;
   border-radius: 0.4rem;
+  background: $brand-orange;
+  color: $bright-white;
+  font-size: 1rem;
 }
 
 .button-container {
@@ -200,5 +192,4 @@ button:hover {
 
 .hidden {
   display: flex;
-  // transition: background 500ms ease-out, opacity 0.1s linear, height 0.1s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20);
 }

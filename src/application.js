@@ -48,13 +48,4 @@ export default class ApplicationView {
       return d;
     });
   }
-
-  // start() {
-  //   return fetch('http://tiny-tn.herokuapp.com/collections/hs-puppy')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       this.data = data;
-  //       this.render(data);
-  //     });
-  // }
 }

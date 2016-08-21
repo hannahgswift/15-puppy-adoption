@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>15-puppy-adoption!!!</title>
   <link rel="stylesheet" href="/app.css">
 </head>
+
 <body>
   <div class="app">
     <nav class="app__nav">
@@ -35,9 +37,7 @@
       </div>
     </form>
     </nav>
-
     <div class="app-main">
-
       <div class="container">
         <div class="puppy-list">
           <div class="puppy-card">
@@ -66,8 +66,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
@@ -76,14 +74,11 @@
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+  var appElement = document.querySelector('.app');
+  var App = require('application');
+  var appyMcAppFace = new App(appElement);
 
-    var appElement = document.querySelector('.app');
-    var App = require('application');
-    var appyMcAppFace = new App(appElement);
-
-    appyMcAppFace.start();
-
-
-  </script>
+  appyMcAppFace.start();
+</script>
 </body>
 </html>

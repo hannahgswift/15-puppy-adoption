@@ -11,9 +11,11 @@ export default class PuppyView {
     <div class="container">
       <div class="puppy-list">
         <div class="puppy-card">
-          <figure class="pic-frame">
+          <div class="object-fit">
+          <div class="pic-frame">
             <img src="" alt="" class="pic-frame__pic">
-          </figure>
+          </div>
+          </div>
           <div class="card-info">
             <ul class="card-list">
               <li class="card-list__item card-list__name">
@@ -59,18 +61,17 @@ export default class PuppyView {
       ev.preventDefault();
 
       fetch(`http://tiny-tn.herokuapp.com/collections/hs-puppy/${this.currentPup._id}`, {
-        method: 'DELETE',
-        headers: {
-          Accept: 'application/json',
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(this.element),
-      }).then((res) => res.json())
-      .then(() => {
-        alert('Puppy go bye bye.');
-        // Should live-reload on delete. Does not work...yet.
-        this.application.removePuppyData(this.currentPup);
-      });
+          method: 'DELETE',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(this.element),
+        }).then((res) => res.json())
+        .then(() => {
+          alert('Puppy go bye bye.');
+          this.application.removePuppyData(this.currentPup);
+        });
     });
   }
 
@@ -79,20 +80,19 @@ export default class PuppyView {
       ev.preventDefault();
 
       fetch(`http://tiny-tn.herokuapp.com/collections/hs-puppy/${this.currentPup._id}`, {
-        method: 'PUT',
-        headers: {
-          Accept: 'application/json',
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: this.element.querySelector('.name-input').value,
-          age: this.element.querySelector('.age-input').value,
-          profile: this.element.querySelector('.profile-input').value,
-          photoUrl: this.element.querySelector('.photo-input').value,
-        }),
-      }).then((res) => res.json())
+          method: 'PUT',
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: this.element.querySelector('.name-input').value,
+            age: this.element.querySelector('.age-input').value,
+            profile: this.element.querySelector('.profile-input').value,
+            photoUrl: this.element.querySelector('.photo-input').value,
+          }),
+        }).then((res) => res.json())
         .then((data) => {
-          // this.info = data;
           alert('Puppy has been updated!');
           this.application.updatePuppy(data);
           this.currentPup = data;
@@ -100,5 +100,4 @@ export default class PuppyView {
         });
     });
   }
-
 }
