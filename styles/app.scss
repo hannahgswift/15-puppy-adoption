@@ -9,6 +9,7 @@ $bright-white: #fff;
 $gray: #5e6d70;
 $black: #000;
 $card-gray: #f2f2f2;
+
 body {
   margin: 0;
 }
@@ -32,15 +33,21 @@ button {
   min-height: 100vh;
 
   &__nav {
+    position: fixed;
+    width: 100%;
     background: $brand-orange;
     color: $bright-white;
-    font-family: sans-serif;
+    font-family: 'Francois One', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    z-index: 9999;
   }
+}
 
-  &__main {
-    flex-grow: 1;
-    padding: 0 $gutter;
-  }
+.app-main {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -72,7 +79,9 @@ button {
   padding: $gutter;
   background: $gray;
   color: $bright-white;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
   overflow: hidden;
 }
 
@@ -112,7 +121,7 @@ button {
   padding: $gutter;
   background: $card-gray;
   color: $black;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -161,6 +170,8 @@ button {
   &__item {
     flex-grow: 1;
     padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
 
@@ -181,12 +192,16 @@ button {
 }
 
 .btn {
-  padding: 0.7rem;
+  padding: 0.7rem 2rem;
   border: 0;
   border-radius: 0.4rem;
   background: $brand-orange;
   color: $bright-white;
   font-size: 1rem;
+  text-transform: uppercase;
+  &:hover {
+    background: lighten($brand-orange, 5%);
+  }
 }
 
 .button-container {
@@ -197,6 +212,27 @@ button {
 
 .hidden {
   display: flex;
+}
+
+.footer {
+  background: $brand-orange;
+  color: white;
+  bottom: 0;
+  margin-bottom: 0;
+  &__content {
+    padding: 1rem 0;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 500px) and (max-width: 980px) {
@@ -215,8 +251,14 @@ button {
     .form-container {
       width: 95%;
       margin: auto;
-    }
   }
+  }
+
+  .footer {
+    .footer-container {
+    width: 95%;
+  }
+}
 
   .form-list {
     width: 100%;
@@ -264,6 +306,11 @@ button {
     }
   }
 
+  .footer {
+    .footer-container {
+    width: 95%;
+  }
+}
   .form-list {
     width: 100%;
   }
