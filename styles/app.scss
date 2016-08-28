@@ -46,14 +46,20 @@ button {
 }
 
 .app-main {
+  width: 100%;
   margin-top: 5rem;
   margin-bottom: 2rem;
+}
+
+.section {
+  width: 100%;
 }
 
 .container {
   display: flex;
   align-items: center;
-  max-width: 60rem;
+  width: 75%;
+  max-width: 75%;
   margin: auto;
 }
 
@@ -112,11 +118,19 @@ button {
 }
 
 // PUPPY CARD STYLES!
+.puppy-list {
+  width: 100%;
+}
+
+.puppy-list__item {
+  width: 100%;
+}
+
 .puppy-card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60rem;
+  width: 100%;
   margin: $gutter 0;
   padding: $gutter;
   background: $card-gray;
@@ -170,8 +184,8 @@ button {
   &__item {
     flex-grow: 1;
     padding-bottom: 0.3rem;
-    text-transform: uppercase;
     font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
@@ -199,6 +213,7 @@ button {
   color: $bright-white;
   font-size: 1rem;
   text-transform: uppercase;
+
   &:hover {
     background: lighten($brand-orange, 5%);
   }
@@ -215,28 +230,29 @@ button {
 }
 
 .footer {
-  background: $brand-orange;
-  color: white;
   bottom: 0;
   margin-bottom: 0;
+  background: $brand-orange;
+  color: $bright-white;
+
   &__content {
     padding: 1rem 0;
     font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
     letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
     a {
-      text-decoration: none;
-      color: black;
+      color: #000;
       font-weight: bold;
+      text-decoration: none;
+
       &:hover {
-        color: white;
+        color: $bright-white;
       }
     }
   }
 }
-
 @media screen and (min-width: 500px) and (max-width: 980px) {
-
   .app {
     max-width: 980px;
   }
@@ -251,14 +267,14 @@ button {
     .form-container {
       width: 95%;
       margin: auto;
-  }
+    }
   }
 
   .footer {
     .footer-container {
-    width: 95%;
+      width: 95%;
+    }
   }
-}
 
   .form-list {
     width: 100%;
@@ -268,9 +284,9 @@ button {
     width: 100%;
   }
 
-
   .container {
     width: 100%;
+    max-width: 100%;
   }
 
   .puppy-list {
@@ -279,11 +295,9 @@ button {
 
   .puppy-card {
     width: 95%;
-    margin: auto;
-    margin-top: $gutter;
+    margin: $gutter auto auto;
   }
 }
-
 @media screen and (min-width: 320px) and (max-width: 650px) {
   .app {
     max-width: 650px;
@@ -296,8 +310,8 @@ button {
   .app__nav {
     .container {
       width: 95%;
+    }
   }
-}
 
   .nav-form {
     .form-container {
@@ -308,15 +322,17 @@ button {
 
   .footer {
     .footer-container {
-    width: 95%;
+      width: 95%;
+    }
   }
-}
+
   .form-list {
     width: 100%;
   }
 
   .container {
     width: 100%;
+    max-width: 100%;
   }
 
   .puppy-list {
@@ -327,8 +343,7 @@ button {
     display: flex;
     flex-direction: column;
     width: 95%;
-    margin: auto;
-    margin-top: $gutter;
+    margin: $gutter auto auto;
   }
 
   .card-info {

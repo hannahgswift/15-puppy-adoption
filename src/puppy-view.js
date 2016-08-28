@@ -8,7 +8,7 @@ export default class PuppyView {
     this.element = document.createElement('div');
     this.element.classList.add('puppy-list__item');
     this.element.innerHTML = `
-    <div class="container">
+    <div class="">
       <div class="puppy-list">
         <div class="puppy-card">
           <div class="object-fit">
