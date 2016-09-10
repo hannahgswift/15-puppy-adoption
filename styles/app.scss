@@ -1,6 +1,358 @@
 // @import 'yoga';
 // @import 'normalize';
-
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+@import 'font-awesome';
 @import 'box-sizing';
+$gutter: 1rem;
+$brand-orange: #f60;
+$bright-white: #fff;
+$gray: #5e6d70;
+$black: #000;
+$card-gray: #f2f2f2;
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+button {
+  outline: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__nav {
+    position: fixed;
+    width: 100%;
+    background: $brand-orange;
+    color: $bright-white;
+    font-family: 'Francois One', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    z-index: 9999;
+  }
+}
+
+.app-main {
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  // width: 75%;
+  max-width: 75%;
+  margin: auto;
+}
+
+.title {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.add-btn {
+  border: 0;
+  background: transparent;
+}
+
+.fa-plus-circle {
+  color: $bright-white;
+  font-size: 2rem;
+}
+
+// FORM STYLES
+.nav-form {
+  display: none;
+  width: 100%;
+  padding: $gutter;
+  background: $gray;
+  color: $bright-white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+
+  &__item {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.form-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 0.1rem solid $black;
+  background: transparent;
+  color: $bright-white;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+// PUPPY CARD STYLES!
+.puppy-list {
+  width: 100%;
+}
+
+.puppy-list__item {
+  width: 100%;
+}
+
+.puppy-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: $gutter 0;
+  padding: $gutter;
+  background: $card-gray;
+  color: $black;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.object-fit {
+  width: calc(100% / 3.5);
+  height: auto;
+  margin: 0;
+}
+
+.pic-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__pic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-left: $gutter;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__item {
+    flex-grow: 1;
+    padding-bottom: 0.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.card-info__title {
+  margin: 0;
+  padding: 0;
+  color: $black;
+}
+
+.card-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 0.1rem solid $black;
+  background: transparent;
+  color: $brand-orange;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.btn {
+  padding: 0.7rem 2rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: $brand-orange;
+  color: $bright-white;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover {
+    background: lighten($brand-orange, 5%);
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: flex;
+}
+
+.footer {
+  bottom: 0;
+  margin-bottom: 0;
+  background: $brand-orange;
+  color: $bright-white;
+
+  &__content {
+    padding: 1rem 0;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        color: $bright-white;
+      }
+    }
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 980px) {
+  .app {
+    max-width: 980px;
+  }
+
+  .app__nav {
+    .container {
+      width: 95%;
+    }
+  }
+
+  .nav-form {
+    .form-container {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  .footer {
+    .footer-container {
+      width: 95%;
+    }
+  }
+
+  .form-list {
+    width: 100%;
+  }
+
+  .app-main {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .puppy-list {
+    width: 100%;
+  }
+
+  .puppy-card {
+    width: 95%;
+    margin: $gutter auto auto;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 650px) {
+  .app {
+    max-width: 650px;
+  }
+
+  .app-main {
+    width: 100%;
+  }
+
+  .app__nav {
+    .container {
+      width: 95%;
+    }
+  }
+
+  .nav-form {
+    .form-container {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  .footer {
+    .footer-container {
+      width: 95%;
+    }
+  }
+
+  .form-list {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .puppy-list {
+    width: 100%;
+  }
+
+  .puppy-card {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: $gutter auto auto;
+  }
+
+  .card-info {
+    width: 100%;
+    margin: 0 $gutter;
+  }
+
+  .object-fit {
+    width: 100%;
+  }
+}

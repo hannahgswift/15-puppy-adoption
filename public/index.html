@@ -1,16 +1,93 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>15-puppy-adoption</title>
+  <title>15-puppy-adoption!!!</title>
   <link rel="stylesheet" href="/app.css">
+  <link href="https://fonts.googleapis.com/css?family=Francois+One|Open+Sans" rel="stylesheet">
 </head>
+
 <body>
+  <div class="app">
+    <nav class="app__nav">
+      <div class="container">
+        <h1 class="title">Puppies</h1>
+        <button class="add-btn"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+      </div>
+      <form class="nav-form">
+        <div class="container form-container">
+          <h3 class="addpup">Add a new puppy</h2>
+          <ul class="form-list">
+            <li class="form-list__item">Name
+              <input class="form-input name-input" type="text"></input>
+            </li>
+            <li class="form-list__item">Age
+              <input class="form-input age-input" type="text"></input>
+            </li>
+            <li class="form-list__item">Photo URL
+              <input class="form-input photo-input" type="text"></input>
+            </li>
+            <li class="form-list__item">Profile
+              <input class="form-input profile-input" type="text"></input>
+            </li>
+          </ul>
+          <div class="button-container button-container__form">
+            <button type="submit" class="btn btn-save">Save</button>
+          </div>
+      </div>
+    </form>
+    </nav>
+    <div class="section">
+      <div class="container">
+    <div class="app-main">
+        <div class="puppy-list">
+          <div class="puppy-card">
+            <figure class="pic-frame">
+              <img src="http://www.placekitten.com/200/200" alt="" class="pic-frame__pic">
+            </figure>
+            <div class="card-info">
+              <ul class="card-list">
+                <li class="card-list__item">Name
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Age
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Photo URL
+                  <input class="card-input" type="text">
+                </li>
+                <li class="card-list__item">Profile
+                  <input class="card-input" type="text">
+                </li>
+              </ul>
+              <div class="button-container">
+                <button class="btn btn-dlt">Delete</button>
+                <button class="btn dtn-udt">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container footer-container">
+      <p class="footer__content">Built by Hannah Swift with Vanilla JavaScript + SASS. View source code <a href="https://github.com/hannahgswift/15-puppy-adoption/tree/develop">here</a>. Back to <a href="http://hannahg.co/">portfolio</a>.</p>
+    </div>
+  </div>
 
   <script src="/vendor.js" charset="utf-8"></script>
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
-  </script>
+  var appElement = document.querySelector('.app');
+  var App = require('application');
+  var appyMcAppFace = new App(appElement);
+
+  appyMcAppFace.start();
+</script>
 </body>
 </html>
